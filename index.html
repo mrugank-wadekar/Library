@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Library</title>
+</head>
+<body>
+    <nav><h1>Personal Library</h1></nav>
+    <div class="container">
+        <form action="">
+            <h3>Add new book</h3>
+            <input type="text" name="title" placeholder="Book name" class="text-input" required>
+            <input type="text" name="author" placeholder="Author name" class="text-input" required>
+            <input type="number" name="pages" placeholder="Total pages" class="text-input" min="1" required>
+            <div class="read_status">
+                <label for="read_status">Have you read it?</label>
+                <input type="checkbox" name="read_status" id="read_status" class="checkbox">
+            </div>
+            <button type= "submit" class="add-btn">Add Book!</button>
+        </form>
+    </div>
+    <section class="shelf">
+        <!-- <span class="material-symbols-outlined">
+            delete
+            </span> -->
+        <!-- <div class="book">
+            <p id="book-name">Sherlock Holmes</p>
+            <p>Sir Arthur Conan Doyle</p>
+            <p>200</p>
+            <button class="btn-read-status">Read</button>
+            <button class="btn-remove">Remove</button>
+        </div>
+        <div class="book">
+            <p id="book-name">Sherlock Holmes</p>
+            <p>Sir Arthur Conan Doyle</p>
+            <p>200</p>
+            <button class="btn-read-status">Read</button>
+            <button class="btn-remove">Remove</button>
+        </div>
+        <div class="book">
+            <p id="book-name">Sherlock Holmes</p>
+            <p>Sir Arthur Conan Doyle</p>
+            <p>200</p>
+            <button class="btn-read-status">Read</button>
+            <button class="btn-remove">Remove</button>
+        </div> -->
+    </section>
+    <footer>Website by Mrugank</footer>
+    
+
+    <script src="library.js" ></script>
+</body>
+</html>
