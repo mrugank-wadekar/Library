@@ -9,11 +9,15 @@
     font-family:'montserrat','sans-serif';
 }
 
+body{
+    min-height: 100vh;
+}
+
 nav{
     background-color: rgb(156, 156, 156);
     height: 5rem;
     padding-top: 1.3rem;
-    padding-left: 1rem;
+    /* padding-left: 1rem; */
     position: sticky;
     top:0;
     
@@ -23,6 +27,7 @@ nav{
 
 h1{
     color: rgb(240, 239, 239);
+    padding-left: 1rem;
     
 }
 
@@ -70,13 +75,22 @@ form{
 }
 
 label{
-    margin-left: 1.5rem;
-    margin-right: 1rem;
+    margin-left: 1.9rem;
+    margin-right: 0.7rem;
 }
 
 .checkbox{
     height: 18px;
     width: 18px;
+    transform: translateY(2.4px);
+}
+
+button{
+    transition: transform 0.3s ease-in;
+}
+
+button:hover{
+    transform: translateY(-0.12rem);
 }
 
 .add-btn{
@@ -99,6 +113,7 @@ label{
     row-gap: 45px;
     /* background-color: aquamarine; */
     margin: 35px 4rem;
+    margin-bottom: 70px;
     padding: 5px;
     box-sizing:content-box;
     
@@ -106,7 +121,8 @@ label{
 
 .book{
     font-size: 1.1rem;
-    background-image: linear-gradient(90deg,rgb(245, 207, 176),rgb(208, 235, 243));
+    background-image: linear-gradient(90deg,rgb(247, 243, 240),rgb(225, 232, 234));
+    background-color: white;
     height: 20rem;
     display: grid;
     grid-template-rows: repeat(5,1fr);
@@ -114,9 +130,9 @@ label{
     gap:1px;
     justify-content: center;
     align-content: center;
-    padding: 5px;
+    padding: 7px;
     border-radius: 10px;
-    box-shadow: 8px 5px 16px rgb(185, 182, 182);
+    box-shadow: 1px 4px 10px rgb(203, 201, 201),-1px -2px 10px rgb(201, 200, 200);
 }
 
 .book > p{
@@ -148,17 +164,30 @@ label{
 
 }
 
+.btn-read-status-y:hover{
+    background-color: rgb(137, 238, 137);
+
+}
+
 .btn-read-status-n{
-    background-color: rgb(243, 160, 146);
+    background-color: rgb(218, 216, 215);
 
 
 }
 
+.btn-read-status-n:hover{
+    background-color: rgb(209, 234, 209);
+}
+
 .btn-remove{
-    background-color: rgb(255, 86, 86);
+    background-color: rgb(255, 118, 118);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.btn-remove:hover{
+    background-color: rgb(254, 95, 95);
 }
 
 .material-symbols-outlined {
@@ -168,3 +197,59 @@ label{
     'GRAD' 0,
     'opsz' 20px
   }
+
+footer{
+    background-image: linear-gradient(-90deg,black,grey);
+    position: sticky;
+    bottom: 0;
+    color: white;
+    /* text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 2rem; */
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    /* background-color: #333; */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-weight: 250;
+    display: grid;
+    place-items: center;
+    
+}
+
+footer a{
+    color: white;
+    
+    /* display: flex;
+    align-items: center; */
+
+}
+
+.bxl-github{
+    font-size: 22px;
+    margin-left: 0.3rem;
+    vertical-align: middle;
+    transform: translateY(-0.1rem);
+}
+
+
+@media screen and (max-width:1024px) {
+    .shelf{
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 9rem;
+
+    }
+}
+
+@media screen and (max-width:610px) {
+    .shelf{
+        grid-template-columns: repeat(1,1fr);
+        column-gap: 9rem;
+
+    }
+}
