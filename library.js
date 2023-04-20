@@ -2,9 +2,10 @@
 
 let myLibrary = [];
 
+
 class Book {
   constructor(title, author, pages, read_status) {
-    this.title - title;
+    this.title = title;
     this.author = author;
     this.pages = pages;
     this.read_status = read_status;
@@ -42,6 +43,9 @@ class Library {
     //const b_obj=new Book("The Hobbit", "J.R.R Tolkien", 295, "not read yet");
     myLibrary.push(b_obj);
     console.log("book added");
+    const jsonMyLib = JSON.stringify(myLibrary);
+    localStorage.setItem('myLibrary',jsonMyLib);
+    // console.log(localStorage["myLibrary"]);
   }
 
   displayBook() {
@@ -92,7 +96,8 @@ class Library {
 
       //removing from the parent shelf
       removeBtn.parentElement.remove();
-
+      const jsonMyLib = JSON.stringify(myLibrary);
+      localStorage.setItem('myLibrary',jsonMyLib);
       console.log("removed book at index " + bookIndex);
     });
 
@@ -111,8 +116,14 @@ class Library {
         readBtn.classList.remove("btn-read-status-n");
         readBtn.classList.add("btn-read-status-y");
       }
+
+      const jsonMyLib = JSON.stringify(myLibrary);
+      // console.log(jsonMyLib);
+      localStorage.setItem('myLibrary',jsonMyLib);
+
     });
   }
+
 }
 
 // capturing form data
@@ -131,5 +142,30 @@ form.addEventListener("submit", (e) => {
   l_obj.addBook();
   l_obj.displayBook();
 
+
   form.reset();
 });
+
+
+function displayShelf(){
+  
+  const jsonMyLib = localStorage["myLibrary"];
+  //console.log("Reached json stage of displayShelf")
+
+  if(jsonMyLib){
+    console.log("Reached valid stage of displayShelf");
+    //returns myLibrary array which has book objects
+    const shelf = JSON.parse(jsonMyLib);
+    for (let book of shelf){
+
+      let l_obj = new Library(book.title, book.author, book.pages, book.read_status);
+      l_obj.addBook();
+      l_obj.displayBook();
+
+    }
+
+  }
+  
+}
+
+displayShelf();
